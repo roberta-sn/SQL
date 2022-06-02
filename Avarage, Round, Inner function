@@ -1,0 +1,12 @@
+--Problem: https://www.hackerrank.com/challenges/average-population-of-each-continent/problem
+
+SELECT
+    COUNTRY.CONTINENT,
+    ROUND(AVG(CITY.POPULATION)-0.5)
+FROM
+    CITY, COUNTRY
+WHERE
+    CITY.COUNTRYCODE = COUNTRY.CODE
+GROUP BY
+    COUNTRY.CONTINENT
+    
